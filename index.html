@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html ng-app="telefonicaMexico">
+<head>
+	<!-- meta -->	
+	<meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>﻿
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Bancomer</title>
+	
+	<!-- Bootstrap -->	
+	<link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" type="text/css"/>
+	<link rel="stylesheet" type="text/css" href="css/estilos.css"/>	
+	<!-- Librerias -->
+	<script src="js/jquery/jquery-1.12.0.min.js"></script>
+	<script src="js/angular/angular.min.js"></script>
+	
+</head>		
+<body ng-app>
+	<!--<img src="santander123.png" style="height:300px; width:400; margin-left:10%;"></img>-->
+	<div class="container">
+	 <div class="col-sm-12" id="panel_destinatario"> 
+	  <div class="panel panel-danger">
+	   <div class="panel-heading">
+	 	<img src="Images/santander123.png" style="width: 100%" class="img-responsive img-rounded "/>
+	   </div>
+	  </div>
+	 </div>
+    </div>
+
+	<div class="container">
+	 <div class="col-sm-12 " id="panel_destinatario"> 
+	  <div class="panel panel-danger"> 
+	   <div id="cuerpo" class="panel-body" ng-controller="CreateOperationController">
+		<form name="userForm" novalidate autocomplete="off">
+		 <div class="col-sm-12 " id="panel_destinatario"> 
+		  <div class="panel panel-danger">
+		   <div class="panel-heading">Ingresar la informacion correspondiente en los siguientes campos</div>
+             <div class="panel-body"> 
+			  <div class="form-group">
+			   <div class="row">		
+			   
+			     <div class="form-group col-sm-6 col-md-6">
+					<label for="nombre" class="control-label">Nombre:</label>
+					<input type="text" class="form-control" id="nombre" name="nombre"  ng-model="user.name" placeholder="Introducir Nombre" >
+     			</div>
+
+				<div class="form-group col-sm-6 col-md-6">
+					<label for="lastname" class="control-label">Apellidos:</label>
+					<input type="text" class="form-control" id="lastname" name="lastname" ng-model="user.lastname" placeholder="Introducir Apellidos" >
+				</div>
+
+				<div class="form-group col-sm-6 col-md-6">
+					<label for="email" class="control-label">Correo Electrónico</label>
+					<input type="text" class="form-control" id="email" name="email" ng-model="user.email" placeholder="Introducir Email" >
+				</div>
+
+				<div class="form-group col-sm-6 col-md-6">
+					<label for="ines" class="control-label">INE:</label>
+					<input type="text" class="form-control" id="ines" name="ines" ng-model="user.nif" placeholder="Introducir INE" />
+				</div>						
+				
+				<div class="form-group col-sm-6 col-md-6">
+				 	<label for="phone" class="control-label">Celular:</label>
+				 	<input type="text" class="form-control" id="phone" name="phone" ng-model="user.cellphone" placeholder="Introducir Celular">
+				</div>
+				
+				<div class="form-group col-sm-6 col-md-6">
+					<label for="operationid" class="control-label">Número Contrato:</label>
+					<input type="text" class="form-control" id="operationid" name="operationid" ng-model="user.operationid" placeholder="Introducir Numero Contrato"/>
+				</div>
+
+				<div class="form-group col-sm-6 col-md-6 ">
+          		 <label class="control-label">Contrato</label>
+          		  <div class="input-group">
+             	   <div class="input-group-btn">
+             		<div class="btn btn-primary btn-file">
+               			+ File&hellip; 
+               		 <input type="file"  id="pdfInp" name="file" onchange="angular.element(this).scope().uploadedFile(this)"/>
+                    </div>
+                   </div>         
+              	   <input type="text" class="form-control" readonly  />
+		          </div>
+		   		</div>
+
+		   		<div class="form-group col-sm-6 col-md-6 ">
+				<canvas id="the-canvas"  style="width:120px; margin-left:13em;"></canvas>
+			    </div>
+			  
+
+				<div class="row" col-lg-6 col-md-3 col-sm-3 style="margin-left:16px;">
+	        		<button class="btn btn-danger btn-md btn-responsive" onClick="location.href='index.html'">Cancelar</button>
+				 	<button class="btn btn-success btn-md btn-responsive" ng-click="creatOperation(user)">Crear Operación</button>
+	        	</div>
+
+				<div id="Searching_Modal" class="modal " tabindex="-1"  data-keyboard="false" >
+				 <div class="modal-dialog modal-sm" style="width: 150px;">
+				  <div class="modal-content" style="background-color: rgb(238, 238, 238); border-radius:33px;">
+				   <div class="modal-body" style="background-color: rgb(238, 238, 238); border-radius:33px; ">
+					<div >
+						 <img style="height:100%; width: 100%;" src="Images/cargando.gif" />
+					</div>
+				   </div>
+				  </div>
+				 </div>
+				</div>
+				
+		    </div>
+		   </div>
+		  </div>
+		 </div>  
+		</form>		
+	   </div>
+	  </div>
+	 </div>	
+	</div>       
+<script type="text/javascript" src="js/bootstrap/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/funangular.js"></script>
+<script type="text/javascript" src="js/funciones.js"> </script>
+<script type="text/javascript" src="js/preview.js"> </script>
+<script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
+
+</body>
+</html>
